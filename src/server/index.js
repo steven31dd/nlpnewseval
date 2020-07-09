@@ -30,14 +30,6 @@ var textapi = new aylien({
    application_key: process.env.API_KEY
 });
 
-textapi.sentiment({
-  'text': 'John is a very good football player!'
-}, function(error, response) {
-  if (error === null) {
-    console.log(response);
-  }
-});
-
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
@@ -48,6 +40,18 @@ app.listen(8081, function () {
     console.log('Server Initialized: port -> (8080)')
 })
 
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
+app.get('/ETPhonehome', function (req, res) {
+  console.log('API call');
+
+  textapi.sentiment({
+    url: req.body.formText,
+    mode: 'document',
+  }, function(error, response) {
+
+    if (error === null) {
+      console.log(error);
+    }
+    console.log('Returning response')
+    res.json(response);
+  });
 })

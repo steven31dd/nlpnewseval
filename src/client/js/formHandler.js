@@ -5,15 +5,26 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('name').value
 
-    //Check for Valid URL >- IF else if (true) {
-    Client.checkForName(formText)
+    if(Client.URLValidation(formText)){
+    fetch("/ETPhoneHome",
+    {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify( { formText } )
+        }).then(res=>res.json())
+                .then(receivedData=>{
+                    document.getElementById('results').innerHTML =
+                        `<p>polarity: ${receivedData.polarity}, <br/>
+                        subjectivity: ${receivedData.subjectivity}, <br/>
+                        text: ${receivedData.text}</p>`;
+                    return data;
+                });
+    }
 
-    console.log("::: URL CONFIRMED :::")
-    fetch('/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
 }
 
 export { handleSubmit }
