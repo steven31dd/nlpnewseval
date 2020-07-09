@@ -1,38 +1,20 @@
-# Webbpack Express Example App
+# Notes
 
-The goal of this repo is be an example of a basic but functional app built on Express and Webpack.
+  __Firefox__ will not work with this project, causing TypeErrors,
+  it is highly recommended to run this project with __Chrome__
 
-If you want to follow along with the course, you will start from the master and switch to the appropriate numbered branches of this repo as needed. The branches are:
-- [0-initial-setup](https://github.com/udacity/fend-webpack-content/tree/0-initial-setup)
-- [1-install-webpack](https://github.com/udacity/fend-webpack-content/tree/1-install-webpack)
-- [2-add-webpack-entry](https://github.com/udacity/fend-webpack-content/tree/2-add-webpack-entry)
-- [3-webpack-output-and-loaders](https://github.com/udacity/fend-webpack-content/tree/3-webpack-output-and-loaders)
-- [4-webpack-plugins](https://github.com/udacity/fend-webpack-content/tree/4-webpack-plugins)
-- [5-webpack-mode](https://github.com/udacity/fend-webpack-content/tree/5-webpack-mode)
-- [6-webpack-for-convenience](https://github.com/udacity/fend-webpack-content/tree/6-webpack-for-convenience)
+  __Chrome__ would log an error for data received, the function should still operate.
 
-Each branch in this project is a step along the path to creating a fully functional webpack setup. In each branch, there will be a documentation file that lists out the steps taken in that branch (each step is also roughly a git commit if you look at the history) which you can use as a checklist when setting up your own projects. 
+  -this app runs on _localhost:8080_, dev-server runs on _localhost:8081_
+## About
 
-## What we will cover
-
-We will cover:
-
-- Webpack entry point
-- Webpack output and dist folder
-- Webpack Loaders
-- Webpack Plugins
-- Webpack Mode
-- Tools for convenient Webpack development
+This project uses __Aylien API__ to analyze text, but for this case a url to a news article.
+Enter a url in the form field and click submit, url will go through _validation_ and if it passes will return data from the api for display in the form results under the form.
 
 ## Get Up and Running
 
-Fork this repo, then clone the branch of your choice from your forked repo down to your computer:
-
-```
-git clone -- git@github.com:[your-user-name]/webpack-express.git --
-```
-
-`cd` into your new folder and run:
-- ```npm install```
-- ```npm start``` to start the app
-- this app runs on localhost:8080, but you can of course edit that in index.js
+_cd_ into News-NLP and run:
+_npm run build_ -dev compile development build and run.
+_npm run build_ -prod compile production build.
+_npm run start_ -Run Package.
+_npm run test_ -test js files with jest.

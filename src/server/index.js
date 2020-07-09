@@ -40,7 +40,7 @@ app.listen(8080, function () {
     console.log('Server Initialized: port -> (8080)')
 })
 
-app.get('/ETPhoneHome', function (req, res) {
+app.post('/ETPhoneHome', function (req, res) {
   console.log('API call');
 
   textapi.sentiment({
@@ -49,7 +49,7 @@ app.get('/ETPhoneHome', function (req, res) {
   }, function(error, response) {
 
     if (error === null) {
-      console.log(error);
+      console.log('(null is good) Error: ',error);
     }
     console.log('Returning response')
     res.json(response);

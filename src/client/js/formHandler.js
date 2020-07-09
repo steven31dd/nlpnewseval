@@ -18,9 +18,9 @@ function handleSubmit(event) {
       }).then(res=>res.json())
           .then(function(receivedData) {
                     document.getElementById('results').innerHTML =
-                        `<p>polarity: ${receivedData.polarity}, <br/>
-                        subjectivity: ${receivedData.subjectivity}, <br/>
-                        text: ${receivedData.text}</p>`;
+                        `<p>polarity: ${receivedData.polarity}, confidence: ${receivedData.polarity_confidence}<br/>
+                        subjectivity: ${receivedData.subjectivity}, confidence: ${receivedData.subjectivity_confidence}</p>
+                        <p>text: ${receivedData.text}</p>`;
                     return receiveddata;
                 });
     }else{
