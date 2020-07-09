@@ -6,7 +6,7 @@ function handleSubmit(event) {
     let formText = document.getElementById('name').value
 
     if(Client.URLValidation(formText)){
-    fetch("/ETPhoneHome",
+    fetch("http://localhost:8080/ETPhoneHome",
     {
         method: 'POST',
         mode: 'cors',
@@ -14,14 +14,14 @@ function handleSubmit(event) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify( { formText } )
-        }).then(res=>res.json())
-                .then(receivedData=>{
+        body: JSON.stringify( { url: formText } )
+      }).then(res=>res.json())
+          .then(function(receivedData) {
                     document.getElementById('results').innerHTML =
                         `<p>polarity: ${receivedData.polarity}, <br/>
                         subjectivity: ${receivedData.subjectivity}, <br/>
                         text: ${receivedData.text}</p>`;
-                    return data;
+                    return receiveddata;
                 });
     }else{
       document.getElementById('results').innerHTML = 'INVALID INPUT: Expected URL';

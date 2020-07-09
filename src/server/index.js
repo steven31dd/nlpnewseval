@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
+app.listen(8080, function () {
     console.log('Server Initialized: port -> (8080)')
 })
 
@@ -44,7 +44,7 @@ app.get('/ETPhoneHome', function (req, res) {
   console.log('API call');
 
   textapi.sentiment({
-    url: req.body.formText,
+    url: req.body.url,
     mode: 'document',
   }, function(error, response) {
 
