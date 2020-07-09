@@ -5,7 +5,7 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('name').value
 
-    //Check for Valid URL >- IF else if (true) {  
+    //Check for Valid URL >- IF else if (true) {
     Client.checkForName(formText)
 
     console.log("::: URL CONFIRMED :::")
@@ -15,3 +15,5 @@ function handleSubmit(event) {
         document.getElementById('results').innerHTML = res.body
     })
 }
+
+export { handleSubmit }
