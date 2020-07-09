@@ -23,6 +23,8 @@ function handleSubmit(event) {
                         text: ${receivedData.text}</p>`;
                     return data;
                 });
+    }else{
+      document.getElementById('results').innerHTML = 'INVALID INPUT: Expected URL';
     }
 
 }

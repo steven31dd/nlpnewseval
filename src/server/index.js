@@ -40,7 +40,7 @@ app.listen(8081, function () {
     console.log('Server Initialized: port -> (8080)')
 })
 
-app.get('/ETPhonehome', function (req, res) {
+app.get('/ETPhoneHome', function (req, res) {
   console.log('API call');
 
   textapi.sentiment({
