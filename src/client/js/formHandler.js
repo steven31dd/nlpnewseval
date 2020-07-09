@@ -9,10 +9,10 @@ function handleSubmit(event) {
     Client.checkForName(formText)
 
     console.log("::: URL CONFIRMED :::")
-    fetch('/ETPhoneHome')
+    fetch('/test')
     .then(res => res.json())
     .then(function(res) {
-        document.getElementById('results').innerHTML = res.body
+        document.getElementById('results').innerHTML = res.message
     })
 }
 

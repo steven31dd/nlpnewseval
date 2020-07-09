@@ -5,7 +5,7 @@ var aylien = require('aylien_textapi');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const app = express()
 //export * from "./js/nameChecker";
 //export * from "./js/formHandler";
 
@@ -18,7 +18,7 @@ app.use(cors());
 dotenv.config();
 
 
-const app = express()
+
 
 app.use(express.static('dist'))
 
